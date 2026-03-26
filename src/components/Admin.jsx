@@ -7,7 +7,7 @@ import useFetch from "./coustomHook/useFetch";
 const API = (import.meta.env.VITE_API_URL || "http://localhost:3000").replace(/\/+$/, "");
 
 const Admin = () => {
-  const navigate = useNavigate();np
+  const navigate = useNavigate();
 
   // ✅ Fetch products from backend
   const { products: fetchedProducts, error, isLoading } = useFetch(
