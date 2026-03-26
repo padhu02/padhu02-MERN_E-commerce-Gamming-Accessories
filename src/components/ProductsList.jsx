@@ -8,7 +8,7 @@ import { useCart } from "../context/CartContext";
 import { useSearch } from "../context/SearchContext";
 
 const ProductsList = () => {
-  const API_URL = import.meta.env.VITE_API_URL || "http://localhost:3000";
+  const API_URL = (import.meta.env.VITE_API_URL || "http://localhost:3000").replace(/\/+$/, "");
   const { products, error, isLoading } = useFetch(
     `${API_URL}/api/products`
   );

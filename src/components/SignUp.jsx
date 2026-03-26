@@ -92,7 +92,7 @@ const SignUp = ({ onClose }) => {
       console.log("Registering user:", formData.email);
       
       // Send registration data to backend API
-      const API_URL = import.meta.env.VITE_API_URL || "http://localhost:3000";
+      const API_URL = (import.meta.env.VITE_API_URL || "http://localhost:3000").replace(/\/+$/, "");
       const response = await fetch(`${API_URL}/api/auth/register`, {
         method: "POST",
         headers: {

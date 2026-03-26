@@ -63,7 +63,7 @@ const LogIn = ({ onClose }) => {
         passwordLength: passwordValue.length 
       });
       
-      const API_URL = import.meta.env.VITE_API_URL || "http://localhost:3000";
+      const API_URL = (import.meta.env.VITE_API_URL || "http://localhost:3000").replace(/\/+$/, "");
       const response = await fetch(`${API_URL}/api/auth/login`, {
         method: "POST",
         headers: {
